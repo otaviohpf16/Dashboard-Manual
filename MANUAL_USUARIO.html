@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MANUAL_USUARIO.md</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+html,footer,header{
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Custom MD PDF CSS
+ */
+html,footer,header{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+
+ }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///r%3A/2.Travail/1.Enseignement/Cours/_1.Outils/2.Developpement/1.SCSS/main.css" type="text/css"><link rel="stylesheet" href="file:///d%3A/rdaros/Cours/_1.Outils/2.Developpement/1.SCSS/main.css" type="text/css">
+</head>
+
+<body>
+    <h1 id="%F0%9F%93%98-manual-do-usu%C3%A1rio---legado-ai">📘 MANUAL DO USUÁRIO - LEGADO AI</h1>
+<h2 id="%C3%ADndice">ÍNDICE</h2>
+<ol>
+<li><a href="#1-introdu%C3%A7%C3%A3o">Introdução</a></li>
+<li><a href="#2-autentica%C3%A7%C3%A3o">Autenticação</a></li>
+<li><a href="#3-dashboard---vis%C3%A3o-geral">Dashboard - Visão Geral</a></li>
+<li><a href="#4-funcion%C3%A1rias-ia-agentes">Funcionárias IA (Agentes)</a></li>
+<li><a href="#5-neg%C3%B3cios">Negócios</a></li>
+<li><a href="#6-mensagens">Mensagens</a></li>
+<li><a href="#7-configura%C3%A7%C3%B5es">Configurações</a></li>
+<li><a href="#8-fluxo-recomendado-para-iniciantes">Fluxo Recomendado</a></li>
+<li><a href="#9-gloss%C3%A1rio">Glossário</a></li>
+</ol>
+<hr>
+<h2 id="1-introdu%C3%A7%C3%A3o">1. INTRODUÇÃO</h2>
+<p>O <strong>Legado AI</strong> é uma plataforma de automação de atendimento via WhatsApp utilizando Inteligência Artificial. Com ele, você pode:</p>
+<ul>
+<li>✅ Criar &quot;funcionárias virtuais&quot; que respondem automaticamente via WhatsApp</li>
+<li>✅ Gerenciar múltiplos negócios em uma única conta</li>
+<li>✅ Acompanhar métricas de performance em tempo real</li>
+<li>✅ Intervir manualmente quando necessário</li>
+<li>✅ Economizar tempo com automação inteligente</li>
+</ul>
+<h3 id="11-navega%C3%A7%C3%A3o-principal">1.1 Navegação Principal</h3>
+<p>O menu lateral (sidebar) contém as seguintes opções:</p>
+<table>
+<thead>
+<tr>
+<th>Ícone</th>
+<th>Menu</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>📊</td>
+<td>Dashboard</td>
+<td>Visão geral e métricas</td>
+</tr>
+<tr>
+<td>🤖</td>
+<td>Funcionárias IA</td>
+<td>Gerenciar agentes virtuais</td>
+</tr>
+<tr>
+<td>🏢</td>
+<td>Negócios</td>
+<td>Cadastrar e gerenciar empresas</td>
+</tr>
+<tr>
+<td>💬</td>
+<td>Mensagens</td>
+<td>Visualizar e responder conversas</td>
+</tr>
+<tr>
+<td>⚙️</td>
+<td>Configurações</td>
+<td>Perfil, segurança e conta</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="2-autentica%C3%A7%C3%A3o">2. AUTENTICAÇÃO</h2>
+<h3 id="21-login">2.1 Login</h3>
+<p><strong>Caminho:</strong> Acesso inicial do sistema</p>
+<p><strong>Campos:</strong></p>
+<ul>
+<li><strong>Email:</strong> Seu email cadastrado</li>
+<li><strong>Senha:</strong> Sua senha de acesso</li>
+</ul>
+<p><strong>Passo a passo:</strong></p>
+<ol>
+<li>Acesse a URL do sistema</li>
+<li>Digite seu email no campo &quot;Email&quot;</li>
+<li>Digite sua senha no campo &quot;Senha&quot;</li>
+<li>Clique em <strong>&quot;Entrar&quot;</strong></li>
+</ol>
+<p><strong>💡 Dica:</strong> Caso tenha esquecido a senha, clique em &quot;Esqueceu a senha?&quot; abaixo do campo de senha.</p>
+<hr>
+<h3 id="22-cadastro-de-nova-conta">2.2 Cadastro de Nova Conta</h3>
+<p><strong>Caminho:</strong> Tela de Login → &quot;Cadastre-se&quot;</p>
+<p><strong>Campos obrigatórios:</strong></p>
+<ul>
+<li><strong>Nome Completo:</strong> Seu nome para identificação</li>
+<li><strong>Email:</strong> Email válido para login</li>
+<li><strong>Senha:</strong> Mínimo de 6 caracteres</li>
+<li><strong>Confirmar Senha:</strong> Repetir a senha</li>
+</ul>
+<p><strong>Passo a passo:</strong></p>
+<ol>
+<li>Na tela de login, clique em <strong>&quot;Cadastre-se&quot;</strong></li>
+<li>Preencha todos os campos</li>
+<li>Clique em <strong>&quot;Criar Conta&quot;</strong></li>
+<li>Você será redirecionado automaticamente para o Dashboard</li>
+</ol>
+<hr>
+<h3 id="23-recupera%C3%A7%C3%A3o-de-senha">2.3 Recuperação de Senha</h3>
+<p><strong>Caminho:</strong> Tela de Login → &quot;Esqueceu a senha?&quot;</p>
+<p><strong>Passo a passo:</strong></p>
+<ol>
+<li>Na tela de login, clique em <strong>&quot;Esqueceu a senha?&quot;</strong></li>
+<li>Digite seu email cadastrado</li>
+<li>Clique em <strong>&quot;Enviar Link de Recuperação&quot;</strong></li>
+<li>Verifique sua caixa de entrada (e spam)</li>
+<li>Clique no link recebido por email</li>
+<li>Defina sua nova senha</li>
+</ol>
+<hr>
+<h2 id="3-dashboard---vis%C3%A3o-geral">3. DASHBOARD - VISÃO GERAL</h2>
+<p><strong>Caminho:</strong> Menu → Dashboard (ícone 📊)</p>
+<p>O Dashboard é dividido em duas seções principais:</p>
+<h3 id="31-cards-de-estat%C3%ADsticas-gerais">3.1 Cards de Estatísticas Gerais</h3>
+<p>Na parte superior, você verá 4 cards com informações resumidas:</p>
+<table>
+<thead>
+<tr>
+<th>Card</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Total de Negócios</strong></td>
+<td>Quantidade de negócios cadastrados na sua conta</td>
+</tr>
+<tr>
+<td><strong>Agentes Ativos</strong></td>
+<td>Proporção de agentes ativos vs total (ex: 2/3)</td>
+</tr>
+<tr>
+<td><strong>Conversas Ativas</strong></td>
+<td>Conversas em andamento no momento</td>
+</tr>
+<tr>
+<td><strong>Mensagens Hoje</strong></td>
+<td>Total de mensagens trocadas no dia</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="32-performance-da-ia">3.2 Performance da IA</h3>
+<p>Abaixo dos cards gerais, há a seção de métricas avançadas:</p>
+<h4 id="321-filtros">3.2.1 Filtros</h4>
+<p>Você pode filtrar os dados por:</p>
+<p><strong>Período:</strong></p>
+<ul>
+<li>Hoje</li>
+<li>Últimos 7 dias</li>
+<li>Últimos 30 dias</li>
+<li>Período personalizado (selecionar datas)</li>
+</ul>
+<p><strong>Funcionária:</strong> Filtrar por agente específico ou &quot;Todos&quot;</p>
+<h4 id="322-kpis-indicadores-de-performance">3.2.2 KPIs (Indicadores de Performance)</h4>
+<p>5 cards com métricas-chave:</p>
+<table>
+<thead>
+<tr>
+<th>KPI</th>
+<th>O que significa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Conversas Automatizadas</strong></td>
+<td>% de conversas resolvidas 100% pela IA</td>
+</tr>
+<tr>
+<td><strong>Tempo de 1ª Resposta</strong></td>
+<td>Tempo médio até a primeira resposta</td>
+</tr>
+<tr>
+<td><strong>Handover para Humano</strong></td>
+<td>% de conversas que precisaram de intervenção</td>
+</tr>
+<tr>
+<td><strong>Conversas Resolvidas</strong></td>
+<td>Total de conversas finalizadas no período</td>
+</tr>
+<tr>
+<td><strong>Tempo Economizado</strong></td>
+<td>Horas economizadas pela automação</td>
+</tr>
+</tbody>
+</table>
+<p><strong>💡 Dica:</strong> Passe o mouse sobre cada card para ver uma explicação detalhada.</p>
+<hr>
+<h4 id="323-gr%C3%A1ficos-e-visualiza%C3%A7%C3%B5es">3.2.3 Gráficos e Visualizações</h4>
+<p><strong>a) Mensagens por Hora</strong></p>
+<ul>
+<li>Gráfico de área mostrando volume de mensagens ao longo do dia</li>
+<li>Linha azul: Mensagens recebidas</li>
+<li>Linha roxa: Mensagens enviadas</li>
+<li>Útil para identificar horários de maior movimento</li>
+</ul>
+<p><strong>b) Taxa de Automação por Dia</strong></p>
+<ul>
+<li>Gráfico de linha mostrando % de automação diária</li>
+<li>Linha pontilhada: Meta de 80% (referência)</li>
+<li>Quanto maior a taxa, mais eficiente está a automação</li>
+</ul>
+<p><strong>c) Tempo de Primeira Resposta (Boxplot)</strong></p>
+<ul>
+<li>Distribuição estatística dos tempos de resposta</li>
+<li>Mostra mediana, quartis e outliers</li>
+<li>Ajuda a identificar consistência no atendimento</li>
+</ul>
+<p><strong>d) Mapa de Calor (Heatmap)</strong></p>
+<ul>
+<li>Volume de conversas por hora × dia da semana</li>
+<li>Verde mais escuro = maior volume de conversas</li>
+<li>Útil para identificar horários de pico e planejar recursos</li>
+</ul>
+<p><strong>e) Tempo Economizado</strong></p>
+<ul>
+<li>Gráfico de linha mostrando horas economizadas por dia</li>
+<li>Cálculo baseado em: 2min primeira resposta + 5min tratamento humano</li>
+<li>Demonstra o ROI da automação</li>
+</ul>
+<hr>
+<h2 id="4-funcion%C3%A1rias-ia-agentes">4. FUNCIONÁRIAS IA (AGENTES)</h2>
+<p><strong>Caminho:</strong> Menu → Funcionárias IA (ícone 🤖)</p>
+<h3 id="41-vis%C3%A3o-geral">4.1 Visão Geral</h3>
+<p>Nesta tela você gerencia suas &quot;funcionárias virtuais&quot; - os agentes de IA que respondem pelo WhatsApp.</p>
+<h3 id="42-filtros-de-busca">4.2 Filtros de Busca</h3>
+<ul>
+<li><strong>Campo de busca:</strong> Buscar por nome da funcionária</li>
+<li><strong>Filtro por negócio:</strong> Mostrar apenas agentes de um negócio específico</li>
+<li><strong>Filtro por status:</strong> Ativo, Inativo ou Em Treinamento</li>
+</ul>
+<hr>
+<h3 id="43-criar-nova-funcion%C3%A1ria">4.3 Criar Nova Funcionária</h3>
+<p><strong>Passo a passo:</strong></p>
+<ol>
+<li>Clique no botão <strong>&quot;+ Nova Funcionária&quot;</strong> (canto superior direito)</li>
+<li>Preencha os campos:
+<ul>
+<li><strong>Avatar:</strong> Clique para fazer upload de uma foto (opcional)</li>
+<li><strong>Nome do Agente:</strong> Nome que aparecerá nas conversas (ex: &quot;Maria&quot;)</li>
+<li><strong>E-mail do Google Calendar:</strong> Para agendamentos (opcional)</li>
+<li><strong>Negócio:</strong> Selecione a qual negócio pertence ⚠️ <strong>OBRIGATÓRIO</strong></li>
+<li><strong>Cargo:</strong> Função do agente (ex: &quot;Atendente&quot;)</li>
+<li><strong>Status:</strong> Ativo, Inativo ou Em Treinamento</li>
+<li><strong>Descrição:</strong> Breve descrição do agente</li>
+</ul>
+</li>
+<li>Clique em <strong>&quot;Salvar&quot;</strong></li>
+<li>Um QR Code será exibido para conectar o WhatsApp</li>
+</ol>
+<hr>
+<h3 id="44-conectar-whatsapp">4.4 Conectar WhatsApp</h3>
+<p>Após criar a funcionária, é necessário vincular um número de WhatsApp:</p>
+<p><strong>Passo a passo:</strong></p>
+<ol>
+<li>O modal com QR Code aparecerá automaticamente</li>
+<li>No celular, abra o WhatsApp</li>
+<li>Vá em <strong>Configurações → Dispositivos Conectados → Conectar Dispositivo</strong></li>
+<li>Escaneie o QR Code exibido na tela</li>
+<li>Aguarde a confirmação &quot;Conectado&quot;</li>
+</ol>
+<p><strong>Status de conexão:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Ícone</th>
+<th>Status</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🟢</td>
+<td>Conectado</td>
+<td>WhatsApp funcionando normalmente</td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>Conectando</td>
+<td>Aguardando conexão</td>
+</tr>
+<tr>
+<td>🔴</td>
+<td>Desconectado</td>
+<td>Precisa reconectar</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="45-card-da-funcion%C3%A1ria---funcionalidades">4.5 Card da Funcionária - Funcionalidades</h3>
+<p>Cada funcionária é exibida em um card com as seguintes opções:</p>
+<p><strong>Informações exibidas:</strong></p>
+<ul>
+<li>Avatar e nome</li>
+<li>Cargo/função</li>
+<li>Status de conexão (badge colorido)</li>
+<li>Negócio vinculado</li>
+<li>Quantidade de mensagens enviadas</li>
+</ul>
+<p><strong>Botões de ação (no canto superior direito):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Ícone</th>
+<th>Ação</th>
+<th>Quando usar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔄</td>
+<td>Reconectar WhatsApp</td>
+<td>Quando o status está &quot;Desconectado&quot;</td>
+</tr>
+<tr>
+<td>🕐</td>
+<td>Sincronizar histórico</td>
+<td>Para importar mensagens antigas</td>
+</tr>
+<tr>
+<td>📱</td>
+<td>Conectar WhatsApp</td>
+<td>Exibir QR Code novamente</td>
+</tr>
+<tr>
+<td>✏️</td>
+<td>Editar informações</td>
+<td>Alterar dados da funcionária</td>
+</tr>
+<tr>
+<td>🗑️</td>
+<td>Excluir funcionária</td>
+<td>Remover permanentemente</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Controle de Pausa Global:</strong></p>
+<ul>
+<li><strong>Switch &quot;Pausa Global&quot;</strong>: Liga/desliga todas as respostas automáticas</li>
+<li>🔴 <strong>Quando ativado (vermelho):</strong> O agente NÃO responde nenhuma conversa</li>
+<li>🟢 <strong>Quando desativado (verde):</strong> O agente responde normalmente</li>
+</ul>
+<p><strong>💡 Dica:</strong> Use a pausa global durante férias ou manutenção.</p>
+<hr>
+<h3 id="46-editar-funcion%C3%A1ria">4.6 Editar Funcionária</h3>
+<p><strong>Passo a passo:</strong></p>
+<ol>
+<li>No card da funcionária, clique no ícone de <strong>lápis</strong> (✏️)</li>
+<li>Altere os campos desejados</li>
+<li>Clique em <strong>&quot;Salvar&quot;</strong></li>
+</ol>
+<hr>
+<h3 id="47-excluir-funcion%C3%A1ria">4.7 Excluir Funcionária</h3>
+<p><strong>Passo a passo:</strong></p>
+<ol>
+<li>No card da funcionária, clique no ícone de <strong>lixeira</strong> (🗑️)</li>
+<li>Confirme a exclusão clicando em <strong>&quot;Deletar&quot;</strong></li>
+</ol>
+<p>⚠️ <strong>ATENÇÃO:</strong> Esta ação é irreversível! Todas as conversas e dados vinculados serão perdidos.</p>
+<hr>
+<h2 id="5-neg%C3%B3cios">5. NEGÓCIOS</h2>
+<p><strong>Caminho:</strong> Menu → Negócios (ícone 🏢)</p>
+<h3 id="51-vis%C3%A3o-geral">5.1 Visão Geral</h3>
+<p>Gerencie as empresas/negócios aos quais suas funcionárias virtuais estão vinculadas. Cada negócio pode ter múltiplas funcionárias IA.</p>
+<h3 id="52-criar-novo-neg%C3%B3cio">5.2 Criar Novo Negócio</h3>
+<p><strong>Passo a passo:</strong></p>
+<ol>
+<li>Clique em <strong>&quot;+ Novo Negócio&quot;</strong> (canto superior direito)</li>
+<li>Preencha os campos:
+<ul>
+<li><strong>Logo:</strong> Upload de imagem (opcional, recomendado)</li>
+<li><strong>Nome do Negócio:</strong> Nome da empresa ⚠️ <strong>OBRIGATÓRIO</strong></li>
+<li><strong>Setor:</strong> Ramo de atuação (ex: &quot;E-commerce&quot;, &quot;Moda&quot;, &quot;Serviços&quot;)</li>
+<li><strong>Descrição:</strong> Descrição detalhada da empresa</li>
+<li><strong>Website:</strong> URL do site institucional</li>
+<li><strong>Telefone:</strong> Telefone de contato</li>
+</ul>
+</li>
+<li>Clique em <strong>&quot;Salvar&quot;</strong></li>
+</ol>
+<hr>
+<h3 id="53-card-do-neg%C3%B3cio">5.3 Card do Negócio</h3>
+<p>Cada negócio é exibido em um card contendo:</p>
+<ul>
+<li><strong>Logo</strong> (se cadastrado) e <strong>nome</strong> do negócio</li>
+<li><strong>Badge com o setor</strong> de atuação</li>
+<li><strong>Descrição</strong> resumida</li>
+<li><strong>Links rápidos</strong> para:
+<ul>
+<li>🌐 Website (abre em nova aba)</li>
+<li>✉️ Email (abre cliente de email)</li>
+<li>📞 Telefone (abre discador em dispositivos móveis)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Ações disponíveis:</strong></p>
+<ul>
+<li>✏️ <strong>Editar:</strong> Alterar informações do negócio</li>
+<li>🗑️ <strong>Excluir:</strong> Remover negócio</li>
+</ul>
+<p>⚠️ <strong>Observação:</strong> Não é possível excluir um negócio que possui funcionárias vinculadas. Primeiro, remova ou transfira as funcionárias.</p>
+<hr>
+<h2 id="6-mensagens">6. MENSAGENS</h2>
+<p><strong>Caminho:</strong> Menu → Mensagens (ícone 💬)</p>
+<h3 id="61-estrutura-da-tela">6.1 Estrutura da Tela</h3>
+<p>A tela é dividida em duas partes:</p>
+<ul>
+<li><strong>Lado esquerdo:</strong> Lista de conversas</li>
+<li><strong>Lado direito:</strong> Histórico de mensagens da conversa selecionada</li>
+</ul>
+<hr>
+<h3 id="62-lista-de-conversas">6.2 Lista de Conversas</h3>
+<p><strong>Filtrar por agente:</strong></p>
+<ul>
+<li>Use as <strong>abas no topo</strong> para filtrar conversas por funcionária</li>
+<li>A aba <strong>&quot;Todos&quot;</strong> mostra conversas de todas as funcionárias</li>
+</ul>
+<p><strong>Informações exibidas em cada conversa:</strong></p>
+<ul>
+<li>Avatar do agente responsável</li>
+<li>Nome e telefone do cliente</li>
+<li>Prévia da última mensagem</li>
+<li>Tempo desde a última mensagem (ex: &quot;há 5 minutos&quot;)</li>
+<li><strong>Status da conversa:</strong>
+<ul>
+<li>🟢 <strong>Ativa:</strong> Em andamento</li>
+<li>🔵 <strong>Fechada:</strong> Finalizada</li>
+<li>📦 <strong>Arquivada:</strong> Arquivada para histórico</li>
+</ul>
+</li>
+<li><strong>Badge &quot;Manual&quot;:</strong> Aparece quando você assumiu o atendimento</li>
+</ul>
+<hr>
+<h3 id="63-assumir-atendimento-handover">6.3 Assumir Atendimento (Handover)</h3>
+<p><strong>O que é:</strong> Pausar a IA e responder manualmente ao cliente.</p>
+<p><strong>Quando usar:</strong></p>
+<ul>
+<li>Situações complexas que requerem julgamento humano</li>
+<li>Cliente solicita falar com atendente</li>
+<li>Negociações ou tratativas especiais</li>
+</ul>
+<p><strong>Passo a passo:</strong></p>
+<ol>
+<li>Selecione a conversa na lista</li>
+<li>Clique no botão <strong>&quot;Assumir Atendimento&quot;</strong> (ícone de mão ✋)</li>
+<li>A IA para de responder automaticamente</li>
+<li>Você pode digitar suas respostas manualmente</li>
+<li>Um badge <strong>&quot;Manual&quot;</strong> aparece na lista de conversas</li>
+</ol>
+<p><strong>Para devolver para a IA:</strong></p>
+<ol>
+<li>Clique em <strong>&quot;Retornar para Agente&quot;</strong> (ícone de robô 🤖)</li>
+<li>A IA volta a responder automaticamente</li>
+<li>O badge &quot;Manual&quot; é removido</li>
+</ol>
+<hr>
+<h3 id="64-visualizar-mensagens">6.4 Visualizar Mensagens</h3>
+<p>Ao selecionar uma conversa, o histórico completo é exibido:</p>
+<p><strong>Layout das mensagens:</strong></p>
+<ul>
+<li>
+<p><strong>Mensagens do cliente:</strong></p>
+<ul>
+<li>Fundo cinza claro</li>
+<li>Alinhadas à esquerda</li>
+<li>Avatar do cliente</li>
+</ul>
+</li>
+<li>
+<p><strong>Mensagens da IA/suas:</strong></p>
+<ul>
+<li>Fundo roxo (cor primária)</li>
+<li>Alinhadas à direita</li>
+<li>Avatar da funcionária</li>
+</ul>
+</li>
+</ul>
+<p><strong>Indicadores de status (mensagens enviadas):</strong></p>
+<ul>
+<li>✓ (um check cinza): Mensagem <strong>enviada</strong></li>
+<li>✓✓ (dois checks azuis): Mensagem <strong>entregue</strong></li>
+<li>✓✓ (dois checks azuis preenchidos): Mensagem <strong>lida</strong></li>
+</ul>
+<p><strong>Informações exibidas:</strong></p>
+<ul>
+<li>Texto da mensagem</li>
+<li>Data e hora de envio</li>
+<li>Status de entrega (para mensagens enviadas)</li>
+</ul>
+<hr>
+<h3 id="65-enviar-mensagem-manual">6.5 Enviar Mensagem Manual</h3>
+<p><strong>Passo a passo:</strong></p>
+<ol>
+<li>Clique em uma conversa (lado esquerdo)</li>
+<li>Digite sua mensagem no <strong>campo de texto</strong> (parte inferior)</li>
+<li>Opções para enviar:
+<ul>
+<li>Pressione <strong>Enter</strong> para enviar</li>
+<li>Clique no botão <strong>Enviar</strong> (ícone ➡️)</li>
+</ul>
+</li>
+</ol>
+<p><strong>💡 Dicas:</strong></p>
+<ul>
+<li>Use <strong>Shift+Enter</strong> para quebrar linha sem enviar</li>
+<li>Mensagens podem ter até 4096 caracteres</li>
+</ul>
+<hr>
+<h2 id="7-configura%C3%A7%C3%B5es">7. CONFIGURAÇÕES</h2>
+<p><strong>Caminho:</strong> Menu → Configurações (ícone ⚙️)</p>
+<p>A tela de configurações é dividida em <strong>3 abas:</strong></p>
+<h3 id="71-aba-perfil">7.1 Aba: Perfil</h3>
+<p><strong>O que você pode fazer:</strong></p>
+<ul>
+<li><strong>Alterar avatar:</strong> Clique no ícone de câmera sobre a foto de perfil</li>
+<li><strong>Alterar nome completo:</strong> Edite o campo &quot;Nome Completo&quot;</li>
+<li><strong>Visualizar email:</strong> O email é exibido, mas não pode ser alterado</li>
+</ul>
+<p><strong>Passo a passo para salvar:</strong></p>
+<ol>
+<li>Faça as alterações desejadas</li>
+<li>Clique em <strong>&quot;Salvar Alterações&quot;</strong></li>
+<li>Aguarde a confirmação &quot;Perfil atualizado com sucesso&quot;</li>
+</ol>
+<hr>
+<h3 id="72-aba-seguran%C3%A7a">7.2 Aba: Segurança</h3>
+<p><strong>Alterar senha:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Senha Atual</strong></td>
+<td>Digite sua senha atual para confirmar identidade</td>
+</tr>
+<tr>
+<td><strong>Nova Senha</strong></td>
+<td>Mínimo de 6 caracteres</td>
+</tr>
+<tr>
+<td><strong>Confirmar Nova Senha</strong></td>
+<td>Repetir a nova senha (deve ser igual)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Passo a passo:</strong></p>
+<ol>
+<li>Clique na aba <strong>&quot;Segurança&quot;</strong></li>
+<li>Preencha os três campos</li>
+<li>Clique em <strong>&quot;Alterar Senha&quot;</strong></li>
+<li>Aguarde a confirmação</li>
+</ol>
+<p><strong>Requisitos de senha:</strong></p>
+<ul>
+<li>✅ Mínimo 6 caracteres</li>
+<li>✅ Recomendado: Combinar letras, números e símbolos</li>
+</ul>
+<hr>
+<h3 id="73-aba-zona-de-perigo">7.3 Aba: Zona de Perigo</h3>
+<p>⚠️ <strong>ATENÇÃO: Ações irreversíveis e permanentes!</strong></p>
+<p><strong>Deletar Conta:</strong><br>
+Esta ação irá:</p>
+<ul>
+<li>❌ Remover permanentemente sua conta</li>
+<li>❌ Excluir todos os negócios cadastrados</li>
+<li>❌ Excluir todas as funcionárias IA</li>
+<li>❌ Apagar todas as conversas e mensagens</li>
+<li>❌ Remover todos os dados vinculados</li>
+</ul>
+<p><strong>Passo a passo:</strong></p>
+<ol>
+<li>Clique na aba <strong>&quot;Zona de Perigo&quot;</strong></li>
+<li>Clique no botão vermelho <strong>&quot;Deletar Minha Conta&quot;</strong></li>
+<li>Um diálogo de confirmação aparecerá</li>
+<li>Digite sua <strong>senha</strong> para confirmar</li>
+<li>Clique em <strong>&quot;Sim, Deletar Conta&quot;</strong></li>
+<li>Você será deslogado imediatamente</li>
+</ol>
+<p>⚠️ <strong>Esta ação NÃO PODE ser desfeita. Todos os dados serão perdidos permanentemente.</strong></p>
+<hr>
+<h2 id="8-fluxo-recomendado-para-iniciantes">8. FLUXO RECOMENDADO PARA INICIANTES</h2>
+<p>Siga este passo a passo para começar a usar o sistema:</p>
+<pre class="hljs"><code><div>1️⃣ Criar conta (Signup)
+      ↓
+2️⃣ Fazer login
+      ↓
+3️⃣ Cadastrar seu primeiro NEGÓCIO
+      ↓
+4️⃣ Criar sua primeira FUNCIONÁRIA IA
+      ↓
+5️⃣ Conectar o WhatsApp (escanear QR Code)
+      ↓
+6️⃣ Aguardar clientes enviarem mensagens
+      ↓
+7️⃣ Acompanhar métricas no DASHBOARD
+      ↓
+8️⃣ Intervir manualmente quando necessário (MENSAGENS)
+      ↓
+9️⃣ Otimizar com base nas métricas
+</div></code></pre>
+<h3 id="dicas-para-primeiros-passos">Dicas para primeiros passos:</h3>
+<p><strong>✅ Configure seu negócio com informações completas</strong></p>
+<ul>
+<li>Logo profissional</li>
+<li>Descrição clara do que faz</li>
+<li>Links de contato atualizados</li>
+</ul>
+<p><strong>✅ Treine sua funcionária IA</strong></p>
+<ul>
+<li>Use descrições detalhadas</li>
+<li>Configure instruções específicas (se disponível)</li>
+<li>Defina o cargo/função claramente</li>
+</ul>
+<p><strong>✅ Teste antes de divulgar</strong></p>
+<ul>
+<li>Envie mensagens de teste</li>
+<li>Verifique se as respostas fazem sentido</li>
+<li>Ajuste conforme necessário</li>
+</ul>
+<p><strong>✅ Monitore regularmente</strong></p>
+<ul>
+<li>Acesse o Dashboard diariamente</li>
+<li>Identifique padrões nas métricas</li>
+<li>Intervenha quando necessário</li>
+</ul>
+<hr>
+<h2 id="9-gloss%C3%A1rio">9. GLOSSÁRIO</h2>
+<h3 id="termos-t%C3%A9cnicos">Termos Técnicos</h3>
+<table>
+<thead>
+<tr>
+<th>Termo</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Agente / Funcionária IA</strong></td>
+<td>Robô virtual que responde automaticamente no WhatsApp usando Inteligência Artificial</td>
+</tr>
+<tr>
+<td><strong>Handover</strong></td>
+<td>Transferência de atendimento da IA para um atendente humano</td>
+</tr>
+<tr>
+<td><strong>Pausa Global</strong></td>
+<td>Recurso para desativar temporariamente todas as respostas automáticas de um agente específico</td>
+</tr>
+<tr>
+<td><strong>Taxa de Automação</strong></td>
+<td>Percentual de conversas que foram resolvidas 100% pela IA, sem necessidade de intervenção humana</td>
+</tr>
+<tr>
+<td><strong>Primeiro Tempo de Resposta</strong></td>
+<td>Tempo decorrido entre a primeira mensagem do cliente e a primeira resposta do sistema</td>
+</tr>
+<tr>
+<td><strong>Heatmap / Mapa de Calor</strong></td>
+<td>Visualização gráfica que mostra o volume de conversas por hora e dia da semana, usando cores para intensidade</td>
+</tr>
+<tr>
+<td><strong>KPI</strong></td>
+<td>Key Performance Indicator (Indicador-chave de performance) - métricas essenciais para avaliar sucesso</td>
+</tr>
+<tr>
+<td><strong>Boxplot</strong></td>
+<td>Gráfico estatístico que mostra a distribuição de dados (mediana, quartis, valores máximo e mínimo)</td>
+</tr>
+<tr>
+<td><strong>QR Code</strong></td>
+<td>Código de barras bidimensional usado para conectar o WhatsApp Web</td>
+</tr>
+<tr>
+<td><strong>Badge</strong></td>
+<td>Etiqueta visual (como &quot;Ativo&quot;, &quot;Manual&quot;, &quot;E-commerce&quot;) que indica status ou categoria</td>
+</tr>
+</tbody>
+</table>
+<h3 id="status-e-estados">Status e Estados</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ativo</strong></td>
+<td>Agente ou negócio em funcionamento normal</td>
+</tr>
+<tr>
+<td><strong>Inativo</strong></td>
+<td>Agente ou negócio desativado temporariamente</td>
+</tr>
+<tr>
+<td><strong>Em Treinamento</strong></td>
+<td>Agente sendo configurado ou testado</td>
+</tr>
+<tr>
+<td><strong>Conectado</strong></td>
+<td>WhatsApp vinculado e funcionando</td>
+</tr>
+<tr>
+<td><strong>Desconectado</strong></td>
+<td>WhatsApp precisa ser reconectado</td>
+</tr>
+<tr>
+<td><strong>Conectando</strong></td>
+<td>Processo de conexão em andamento</td>
+</tr>
+<tr>
+<td><strong>Conversa Ativa</strong></td>
+<td>Conversa em andamento</td>
+</tr>
+<tr>
+<td><strong>Conversa Fechada</strong></td>
+<td>Conversa finalizada</td>
+</tr>
+<tr>
+<td><strong>Conversa Arquivada</strong></td>
+<td>Conversa arquivada para histórico</td>
+</tr>
+</tbody>
+</table>
+<h3 id="conceitos-de-neg%C3%B3cio">Conceitos de Negócio</h3>
+<table>
+<thead>
+<tr>
+<th>Conceito</th>
+<th>Explicação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tempo Economizado</strong></td>
+<td>Cálculo de horas economizadas pela automação, considerando o tempo que seria gasto em atendimento manual (2min para primeira resposta + 5min para tratamento)</td>
+</tr>
+<tr>
+<td><strong>SLA</strong></td>
+<td>Service Level Agreement - tempo máximo acordado para primeira resposta</td>
+</tr>
+<tr>
+<td><strong>ROI</strong></td>
+<td>Return on Investment - retorno sobre investimento da automação</td>
+</tr>
+<tr>
+<td><strong>Handover Rate</strong></td>
+<td>Percentual de conversas que precisaram ser transferidas para atendente humano</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="perguntas-frequentes-faq">PERGUNTAS FREQUENTES (FAQ)</h2>
+<h3 id="1-posso-ter-mais-de-uma-funcion%C3%A1ria-ia">1. Posso ter mais de uma funcionária IA?</h3>
+<p><strong>Sim!</strong> Você pode criar quantas funcionárias quiser, cada uma com seu próprio número de WhatsApp.</p>
+<h3 id="2-preciso-ter-um-chipn%C3%BAmero-diferente-para-cada-funcion%C3%A1ria">2. Preciso ter um chip/número diferente para cada funcionária?</h3>
+<p><strong>Sim.</strong> Cada funcionária IA precisa estar vinculada a um número de WhatsApp exclusivo.</p>
+<h3 id="3-a-ia-responde-a-mensagens-de-grupo">3. A IA responde a mensagens de grupo?</h3>
+<p>Por padrão, o sistema filtra mensagens de grupo. Verifique as configurações do seu agente.</p>
+<h3 id="4-o-que-acontece-se-eu-desconectar-o-whatsapp">4. O que acontece se eu desconectar o WhatsApp?</h3>
+<p>O agente para de funcionar. Os clientes não receberão respostas até você reconectar.</p>
+<h3 id="5-posso-editar-as-respostas-da-ia">5. Posso editar as respostas da IA?</h3>
+<p>No momento, você pode assumir o atendimento manualmente. Personalização avançada depende da configuração do agente.</p>
+<h3 id="6-as-conversas-antigas-s%C3%A3o-salvas">6. As conversas antigas são salvas?</h3>
+<p><strong>Sim.</strong> Use o botão &quot;Sincronizar Histórico&quot; no card da funcionária para importar mensagens antigas.</p>
+<h3 id="7-posso-exportar-os-dadosrelat%C3%B3rios">7. Posso exportar os dados/relatórios?</h3>
+<p>Atualmente, os dados são visualizados no Dashboard. Recursos de exportação podem ser adicionados futuramente.</p>
+<h3 id="8-como-sei-se-a-ia-est%C3%A1-funcionando-bem">8. Como sei se a IA está funcionando bem?</h3>
+<p>Monitore a <strong>Taxa de Automação</strong> no Dashboard. Acima de 70-80% é considerado bom desempenho.</p>
+<hr>
+<h2 id="suporte-e-contato">SUPORTE E CONTATO</h2>
+<p>Em caso de dúvidas, problemas técnicos ou sugestões, entre em contato através dos canais oficiais de suporte:</p>
+<ul>
+<li>📧 <strong>Email:</strong> suporte@legadoassessoria.com</li>
+<li>💬 <strong>WhatsApp:</strong> Contate o administrador do sistema</li>
+<li>📚 <strong>Documentação:</strong> Consulte este manual</li>
+</ul>
+<hr>
+<h2 id="informa%C3%A7%C3%B5es-do-documento">INFORMAÇÕES DO DOCUMENTO</h2>
+<ul>
+<li><strong>Título:</strong> Manual do Usuário - Legado AI</li>
+<li><strong>Versão:</strong> 1.0</li>
+<li><strong>Data de Criação:</strong> Novembro/2025</li>
+<li><strong>Última Atualização:</strong> Novembro/2025</li>
+<li><strong>Público-alvo:</strong> Usuários finais (clientes)</li>
+<li><strong>Exclusões:</strong> Funcionalidades de Super Admin não estão cobertas neste manual</li>
+</ul>
+<hr>
+<p><strong>© 2025 Legado AI - Todos os direitos reservados</strong></p>
+
+</body>
+
+</html>
